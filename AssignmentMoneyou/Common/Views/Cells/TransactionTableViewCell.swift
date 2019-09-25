@@ -19,7 +19,6 @@ public class TransactionTableViewCell: UITableViewCell {
         static let containerInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         static let topSeparator: CGFloat = 4
         static let widthSeparator: CGFloat = 1
-        static let heightSeparator: CGFloat = 1
         static let labelsSpacing: CGFloat = 5
         static let innerLabelsSpacing: CGFloat = 10
     }
@@ -129,14 +128,11 @@ public class TransactionTableViewCell: UITableViewCell {
         get { return previousBalanceLabel.textColor }
     }
     
-    private let hSeparatorView: UIView = {
-        let lbl = UIView()
-        return lbl
-    }()
-    
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.selectionStyle = .none
         
         topLeftLabel.translatesAutoresizingMaskIntoConstraints = false
         topLeftLabel.numberOfLines = 1
@@ -168,10 +164,6 @@ public class TransactionTableViewCell: UITableViewCell {
         previousBalanceLabel.numberOfLines = 1
         previousBalanceLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         addSubview(previousBalanceLabel)
-        
-        hSeparatorView.translatesAutoresizingMaskIntoConstraints = false
-        hSeparatorView.backgroundColor = .gray
-        addSubview(hSeparatorView)
         
         setupConstraints()
     }
@@ -211,12 +203,8 @@ public class TransactionTableViewCell: UITableViewCell {
             previousBalanceLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: ViewTraits.innerLabelsSpacing),
             previousBalanceLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -ViewTraits.containerInsets.right),
             previousBalanceLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: ViewTraits.containerInsets.top),
-            previousBalanceLabel.bottomAnchor.constraint(equalTo: hSeparatorView.topAnchor, constant: -ViewTraits.innerLabelsSpacing),
+            previousBalanceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -ViewTraits.innerLabelsSpacing),
             
-            hSeparatorView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            hSeparatorView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            hSeparatorView.heightAnchor.constraint(equalToConstant: ViewTraits.heightSeparator),
-            hSeparatorView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
     }
     
@@ -242,6 +230,5 @@ public class TransactionTableViewCell: UITableViewCell {
         previousBalance = nil
         previousBalanceColor = .black
         
-        hSeparatorView.backgroundColor = .white
     }
 }

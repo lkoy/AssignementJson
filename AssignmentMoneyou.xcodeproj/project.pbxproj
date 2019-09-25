@@ -26,6 +26,9 @@
 		535029BF233AB50800361CEE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 535029BC233AB4A000361CEE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		535029C3233AD9DE00361CEE /* MoneyouModelsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535029C2233AD9DE00361CEE /* MoneyouModelsBuilder.swift */; };
 		535029C6233ADE4400361CEE /* MoneyoyRepoModelsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535029C5233ADE4400361CEE /* MoneyoyRepoModelsBuilder.swift */; };
+		535029C8233B4EE300361CEE /* GetTransactionsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535029C7233B4EE300361CEE /* GetTransactionsInteractorTests.swift */; };
+		535029CA233B573400361CEE /* TransactionModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535029C9233B573400361CEE /* TransactionModelBuilder.swift */; };
+		535029D2233B897100361CEE /* SplashPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535029D1233B897100361CEE /* SplashPresenterTests.swift */; };
 		535B001E2337AD9F00B0ED72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535B001D2337AD9F00B0ED72 /* AppDelegate.swift */; };
 		535B00252337ADA000B0ED72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535B00242337ADA000B0ED72 /* Assets.xcassets */; };
 		535B00282337ADA000B0ED72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535B00262337ADA000B0ED72 /* LaunchScreen.storyboard */; };
@@ -112,6 +115,9 @@
 		535029BC233AB4A000361CEE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		535029C2233AD9DE00361CEE /* MoneyouModelsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyouModelsBuilder.swift; sourceTree = "<group>"; };
 		535029C5233ADE4400361CEE /* MoneyoyRepoModelsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyoyRepoModelsBuilder.swift; sourceTree = "<group>"; };
+		535029C7233B4EE300361CEE /* GetTransactionsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsInteractorTests.swift; sourceTree = "<group>"; };
+		535029C9233B573400361CEE /* TransactionModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModelBuilder.swift; sourceTree = "<group>"; };
+		535029D1233B897100361CEE /* SplashPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterTests.swift; sourceTree = "<group>"; };
 		535B001A2337AD9F00B0ED72 /* AssignmentMoneyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentMoneyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		535B001D2337AD9F00B0ED72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		535B00242337ADA000B0ED72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				535029B7233AB3B500361CEE /* Core */,
+				535029CE233B7F2A00361CEE /* Modules */,
 				535029B1233AB37F00361CEE /* Info.plist */,
 			);
 			path = AssignmentMoneyouTests;
@@ -274,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				535029B9233AB3EC00361CEE /* GetAccountWorkerTests.swift */,
+				535029C7233B4EE300361CEE /* GetTransactionsInteractorTests.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				535029C2233AD9DE00361CEE /* MoneyouModelsBuilder.swift */,
+				535029C9233B573400361CEE /* TransactionModelBuilder.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -301,6 +310,30 @@
 				535029C5233ADE4400361CEE /* MoneyoyRepoModelsBuilder.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		535029CE233B7F2A00361CEE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				535029D0233B7F6700361CEE /* Splash */,
+				535029CF233B7F4300361CEE /* Acount */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		535029CF233B7F4300361CEE /* Acount */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Acount;
+			sourceTree = "<group>";
+		};
+		535029D0233B7F6700361CEE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				535029D1233B897100361CEE /* SplashPresenterTests.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		535B00112337AD9F00B0ED72 = {
@@ -592,7 +625,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				535029C6233ADE4400361CEE /* MoneyoyRepoModelsBuilder.swift in Sources */,
+				535029D2233B897100361CEE /* SplashPresenterTests.swift in Sources */,
+				535029CA233B573400361CEE /* TransactionModelBuilder.swift in Sources */,
 				535029C3233AD9DE00361CEE /* MoneyouModelsBuilder.swift in Sources */,
+				535029C8233B4EE300361CEE /* GetTransactionsInteractorTests.swift in Sources */,
 				535029BA233AB3EC00361CEE /* GetAccountWorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,22 +48,19 @@ final class AccountViewController: BaseViewController {
         view.backgroundColor = .white
         
         headerView = UIView()
-        headerView.backgroundColor = UIColor(red: 0.33, green: 0.33, blue: 0.56, alpha: 0.9)
+        headerView.backgroundColor = .appViolet
         headerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(headerView)
         
         containerAccountView = UIView()
-        containerAccountView.backgroundColor = .white
-        containerAccountView.layer.shadowRadius = 5
-        containerAccountView.layer.shadowColor = UIColor.white.cgColor
-        containerAccountView.layer.shadowOffset = .zero
-        containerAccountView.layer.shadowOpacity = 1
+        containerAccountView.backgroundColor = .clear
         containerAccountView.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(containerAccountView)
         
         accountLabel = UILabel()
         accountLabel.translatesAutoresizingMaskIntoConstraints = false
         accountLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
+        accountLabel.textColor = .white
         accountLabel.textAlignment = .left
         accountLabel.text = "Account"
         containerAccountView.addSubview(accountLabel)
@@ -72,12 +69,13 @@ final class AccountViewController: BaseViewController {
         accountNameLabel.translatesAutoresizingMaskIntoConstraints = false
         accountNameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         accountNameLabel.textAlignment = .left
-        accountNameLabel.textColor = UIColor(red:0.78, green:0.00, blue:0.22, alpha:1.0)
+        accountNameLabel.textColor = .white
         containerAccountView.addSubview(accountNameLabel)
         
         accountAmountLabel = UILabel()
         accountAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        accountAmountLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        accountAmountLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+        accountAmountLabel.textColor = .white
         accountAmountLabel.textAlignment = .right
         containerAccountView.addSubview(accountAmountLabel)
         
@@ -86,7 +84,7 @@ final class AccountViewController: BaseViewController {
         tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: TransactionTableViewCell.cellIdentifier)
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.dataSource = self
         view.addSubview(tableView)
     }

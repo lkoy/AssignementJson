@@ -49,7 +49,7 @@ extension GetTransactionsInteractor: GetTransactionsInteractorProtocol {
     func prepareTransactions(transactions: [MoneyouModels.Account.Transaction], balance: Float) {
         
         var orderedTransactions = transactions.sorted(by: { $0.date.compare($1.date) == .orderedDescending})
-        orderedTransactions = addTotal(toTransactions: transactions, balance: balance)
+        orderedTransactions = addTotal(toTransactions: orderedTransactions, balance: balance)
         
         self.presenter.found(transactions: orderedTransactions)
     }
