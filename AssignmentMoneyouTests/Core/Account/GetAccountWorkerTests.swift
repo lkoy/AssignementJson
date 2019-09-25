@@ -42,6 +42,23 @@ class GetAccountWorkerTests: XCTestCase {
         expect(dataResult).toNotEventually(beNil())
         expect(dataResult).toEventually(equal(MoneyouModelsBuilder().build()))
     }
+    
+    func test_get_account_details_without_transactions_success() {
+
+        mockAccountRepository.result = .success(MoneyoyRepoModelsBuilder().buildWithoutTransactions())
+
+        var dataResult: MoneyouModels.Account?
+        sut.execute { (result) in
+            switch result {
+            case .success(let data):
+                dataResult = data
+            case .failure:
+                XCTFail("Worker should have not fail")
+            }
+        }
+        expect(dataResult).toNotEventually(beNil())
+        expect(dataResult).toEventually(equal(MoneyouModelsBuilder().buildWithoutTransactions()))
+    }
 
     func test_get_account_details_with_error_then_failure() {
         
