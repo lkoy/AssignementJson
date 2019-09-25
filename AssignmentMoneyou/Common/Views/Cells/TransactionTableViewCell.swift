@@ -144,6 +144,7 @@ public class TransactionTableViewCell: UITableViewCell {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.numberOfLines = 1
+        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         addSubview(titleLabel)
         
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -185,24 +186,21 @@ public class TransactionTableViewCell: UITableViewCell {
             
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.containerInsets.top),
             titleLabel.leadingAnchor.constraint(equalTo: separatorView.trailingAnchor, constant: ViewTraits.innerLabelsSpacing),
-            titleLabel.trailingAnchor.constraint(equalTo: amountLabel.leadingAnchor, constant: ViewTraits.innerLabelsSpacing),
+            titleLabel.trailingAnchor.constraint(equalTo: amountLabel.leadingAnchor, constant: -ViewTraits.innerLabelsSpacing),
             
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ViewTraits.labelsSpacing),
             
-            actualBalanceLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: ViewTraits.innerLabelsSpacing),
+            actualBalanceLabel.leadingAnchor.constraint(equalTo: amountLabel.leadingAnchor),
             actualBalanceLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -ViewTraits.containerInsets.right),
             actualBalanceLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.containerInsets.top),
             actualBalanceLabel.bottomAnchor.constraint(equalTo: amountLabel.topAnchor, constant: -ViewTraits.innerLabelsSpacing),
             
-            amountLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: ViewTraits.innerLabelsSpacing),
             amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -ViewTraits.containerInsets.right),
-            amountLabel.topAnchor.constraint(equalTo: actualBalanceLabel.bottomAnchor, constant: ViewTraits.containerInsets.top),
-            amountLabel.bottomAnchor.constraint(equalTo: previousBalanceLabel.topAnchor, constant: -ViewTraits.innerLabelsSpacing),
             
-            previousBalanceLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: ViewTraits.innerLabelsSpacing),
+            previousBalanceLabel.leadingAnchor.constraint(equalTo: amountLabel.leadingAnchor),
             previousBalanceLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -ViewTraits.containerInsets.right),
-            previousBalanceLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: ViewTraits.containerInsets.top),
+            previousBalanceLabel.topAnchor.constraint(equalTo: amountLabel.bottomAnchor, constant: ViewTraits.innerLabelsSpacing),
             previousBalanceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -ViewTraits.innerLabelsSpacing),
             
             ])

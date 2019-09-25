@@ -25,10 +25,6 @@ final class SplashViewController: BaseViewController {
         static let loadingsize: CGFloat = 80.0
         static let logoHeigh: CGFloat = 20.0
     }
-    
-    public enum AccessibilityIds {
-        
-    }
 
     // MARK: - ViewLife Cycle
 

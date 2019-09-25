@@ -19,6 +19,7 @@ final class AccountViewController: BaseViewController {
     private var headerView: UIView!
     private var containerAccountView: UIView!
     private var accountLabel: UILabel!
+    private var titleLabel: UILabel!
     private var accountNameLabel: UILabel!
     private var accountAmountLabel: UILabel!
     private var tableView: UITableView!
@@ -28,10 +29,7 @@ final class AccountViewController: BaseViewController {
         static let margins = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         static let containerMargins = UIEdgeInsets(top: 40, left: 10, bottom: 10, right: 10)
         static let headerHeight: CGFloat = 100.0
-    }
-    
-    public enum AccessibilityIds {
-        
+        static let logoHeigh: CGFloat = 20.0
     }
 
     // MARK: - ViewLife Cycle
@@ -64,6 +62,14 @@ final class AccountViewController: BaseViewController {
         accountLabel.textAlignment = .left
         accountLabel.text = "Account"
         containerAccountView.addSubview(accountLabel)
+        
+        titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        titleLabel.textColor = .white
+        titleLabel.textAlignment = .center
+        titleLabel.text = "Moneyou"
+        containerAccountView.addSubview(titleLabel)
         
         accountNameLabel = UILabel()
         accountNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -104,6 +110,10 @@ final class AccountViewController: BaseViewController {
             accountLabel.leadingAnchor.constraint(equalTo: containerAccountView.leadingAnchor, constant: ViewTraits.margins.left),
             accountLabel.topAnchor.constraint(equalTo: containerAccountView.topAnchor, constant: ViewTraits.margins.top),
             accountLabel.bottomAnchor.constraint(equalTo: accountNameLabel.topAnchor, constant: -ViewTraits.margins.top),
+            
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: ViewTraits.logoHeigh),
+            titleLabel.topAnchor.constraint(equalTo: containerAccountView.topAnchor),
             
             accountNameLabel.leadingAnchor.constraint(equalTo: containerAccountView.leadingAnchor, constant: ViewTraits.margins.left),
             accountNameLabel.bottomAnchor.constraint(equalTo: containerAccountView.bottomAnchor, constant: -ViewTraits.margins.bottom),
