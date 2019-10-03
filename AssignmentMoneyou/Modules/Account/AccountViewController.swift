@@ -28,7 +28,7 @@ final class AccountViewController: BaseViewController {
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         static let containerMargins = UIEdgeInsets(top: 40, left: 10, bottom: 10, right: 10)
-        static let headerHeight: CGFloat = 100.0
+        static let headerHeight: CGFloat = 110.0
         static let logoHeigh: CGFloat = 20.0
     }
 
@@ -68,7 +68,7 @@ final class AccountViewController: BaseViewController {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
-        titleLabel.text = "Moneyou"
+        titleLabel.text = "TopBank"
         containerAccountView.addSubview(titleLabel)
         
         accountNameLabel = UILabel()
